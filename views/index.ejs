@@ -1,0 +1,33 @@
+<form action="/registrar" method="POST">
+    <div class="mb-3">
+      <label for="user" class="form-label">Usuario</label>
+      <input id="user" name="user" type="text" class="form-control" value="<% if(typeof valores != 'undefined') { %><%= valores.user %><%}%>">              
+    </div>
+    <div class="mb-3">
+      <label for="name" class="form-label">Nombre completo</label>
+      <input id="name" name="name" type="text" class="form-control" value="<% if(typeof valores != 'undefined') { %><%= valores.name %><%}%>">              
+    </div>
+    <div class="mb-3">
+      <label for="role" class="form-label">Cargo</label>
+      <input id="role" name="role" type="text" class="form-control" value="<% if(typeof valores != 'undefined') { %><%= valores.role %><%}%>">              
+    </div>
+    <div class="mb-3">
+      <label for="cellphone" class="form-label">Teléfono</label>
+      <input id="cellphone" name="cellphone" type="text" class="form-control" value="<% if(typeof valores != 'undefined') { %><%= valores.cellphone %><%}%>">              
+    </div>            
+    <div class="mb-3">
+      <label for="email" class="form-label">E-mail</label>
+      <input id="email" name="email" type="text" class="form-control" value="<% if(typeof valores != 'undefined') { %><%= valores.email %><%}%>">              
+    </div>
+    <div class="mb-3">
+      <label for="contacttype" class="form-label">Tipo de contacto</label>
+      <input list="contacttypes" id="contacttype" name="contacttype" value="<% if(typeof valores != 'undefined') { %><%= valores.contacttype %><%}%>">              
+      <datalist id="contacttypes">
+        <option value="Contacto Comercial">
+        <option value="Pago de factura">
+        <option value="Representante legal">
+        <option value="Retiro de mercadería">
+      </datalist>
+    </div>
+    <button type="submit" class="btn btn-primary">Registrar</button>
+</form>

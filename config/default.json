@@ -1,0 +1,10 @@
+{
+    "server": {
+      "host": "localhost",
+      "port": 3000
+    },
+    "externaApi":
+    {
+        "url":"https://localhost:7124/api/Customers"
+    }    
+}

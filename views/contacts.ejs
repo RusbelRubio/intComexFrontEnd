@@ -1,0 +1,70 @@
+<div class="jumbotrom text-dark mt-2 pt-2 mb-5">
+    
+    <table id="AllContacts" class="table">
+      
+    </table>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        let dt = $('#AllContacts').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "initComplete": function (settings, json) {
+                $('#AllContacts').show();
+            },
+            "select": true,
+            "bFilter": false,
+            "bInfo": false,
+            "bPaginate": false,
+            "columns": [{
+                "data": "idUserInf",
+                "name": "idUserInf",
+                "title": "Contact ID"
+            },
+            {
+                "data": "userInf",
+                "name": "userInf",
+                "title": "Code User"
+            },
+            {
+                "data": "nameInf",
+                "name": "nameInf",
+                "title": "Name User"
+            },
+            {
+                "data": "titleInf",
+                "name": "titleInf",
+                "title": "Rol User"
+            },
+            {
+                "data": "cellphoneInf",
+                "name": "cellphoneInf",
+                "title": "Telefono User"
+            },
+            {
+                "data": "emailInf",
+                "name": "emailInf",
+                "title": "Emmail User"
+            },
+            {
+                "data": "contactTypeInf",
+                "name": "contactTypeInf",
+                "title": "Type Of Contact User"
+            }
+            ],
+            "languaje": {
+                "emptyTable": "No Customer exist in DataBase!"
+            },
+            "ajax": {
+                "type": "get",
+                "url": '../feedTBL',
+                "contentType": 'application/json; charset=utf-8',
+                "dataType": 'json',
+                "dataSrc": ""
+            }
+        });
+    });
+</script>
